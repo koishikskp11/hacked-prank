@@ -25,14 +25,32 @@
             transform: translateX(-50%);
             animation: beat 0.5s infinite alternate, rise 2s ease-out forwards;
         }
-        .donkey-fight {
+        .fight-container {
+            display: none;
             position: absolute;
             left: 50%;
             top: 60%;
-            font-size: 50px;
-            color: white;
             transform: translateX(-50%);
-            display: none;
+            text-align: center;
+        }
+        .fight-text {
+            font-size: 40px;
+            color: white;
+        }
+        .fight-button {
+            font-size: 30px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .arrow {
+            font-size: 50px;
+            color: yellow;
+            animation: bounce 1s infinite alternate;
         }
         @keyframes beat {
             from { transform: translateX(-50%) scale(1); }
@@ -41,6 +59,10 @@
         @keyframes rise {
             from { top: 100%; }
             to { top: 50%; }
+        }
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
         }
     </style>
 </head>
@@ -63,15 +85,16 @@
                     document.getElementById("countdown2").innerText = count2;
                     if (count2 === 0) {
                         clearInterval(countdown2);
-                        document.body.innerHTML = "<h1>Oh no! It's Kathe! 🫏</h1><p>Time for a fun fight! 🥊</p><div class='donkey-fight'>🐴💥🤜🤛💥🐵</div>";
-                        document.querySelector('.donkey-fight').style.display = 'block';
-                        setTimeout(function() {
-                            window.location.href = "https://www.tickcounter.com/countdown/6797353/just-this-days";
-                        }, 5000);
+                        document.body.innerHTML = "<h1>Oh no! It's Kathe! 🫏</h1><p>Time for a fun fight! 🥊</p><div class='fight-container'><p class='fight-text'>Let's fight!</p><button class='fight-button' onclick='startFight()'>LET'S FIGHT</button><div class='arrow'>⬇️</div></div>";
+                        document.querySelector('.fight-container').style.display = 'block';
                     }
                 }, 1000);
             }
         }, 1000);
+        
+        function startFight() {
+            window.location.href = "https://www.tickcounter.com/countdown/6797353/just-this-days";
+        }
     </script>
 </body>
 </html>
