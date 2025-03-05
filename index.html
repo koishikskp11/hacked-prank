@@ -50,6 +50,10 @@
         .arrow {
             font-size: 50px;
             color: yellow;
+            position: absolute;
+            right: -60px;
+            top: 50%;
+            transform: translateY(-50%) rotate(0deg);
             animation: bounce 1s infinite alternate;
         }
         @keyframes beat {
@@ -61,8 +65,8 @@
             to { top: 50%; }
         }
         @keyframes bounce {
-            from { transform: translateY(0); }
-            to { transform: translateY(-10px); }
+            from { transform: translateY(-50%) rotate(0deg); }
+            to { transform: translateY(-60%) rotate(10deg); }
         }
     </style>
 </head>
@@ -85,7 +89,7 @@
                     document.getElementById("countdown2").innerText = count2;
                     if (count2 === 0) {
                         clearInterval(countdown2);
-                        document.body.innerHTML = "<h1>Oh no! It's Kathe! 🫏</h1><p>Time for a fun fight! 🥊</p><div class='fight-container'><p class='fight-text'>Let's fight!</p><button class='fight-button' onclick='startFight()'>LET'S FIGHT</button><div class='arrow'>⬇️</div></div>";
+                        document.body.innerHTML = "<h1>Oh no! It's Kathe! 🫏</h1><p>Time for a fun fight! 🥊</p><div class='fight-container'><p class='fight-text'>Let's fight!</p><button class='fight-button' onclick='startFight()'>LET'S FIGHT</button><div class='arrow'>➡️</div></div>";
                         document.querySelector('.fight-container').style.display = 'block';
                     }
                 }, 1000);
