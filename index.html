@@ -11,18 +11,31 @@
             font-size: 40px;
             padding-top: 20%;
         }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <h1>█ █ █ H A C K E D █ █ █</h1>
-    <p>YOUR DEVICE HAS BEEN COMPROMISED!</p>
+    <div id="hacked">
+        <h1>█ █ █ H A C K E D █ █ █</h1>
+        <p>YOUR DEVICE HAS BEEN COMPROMISED!</p>
+    </div>
+    
+    <div id="kidding" class="hidden">
+        <h1>Just kidding, Meghu! 😜</h1>
+        <p>I just wanted to remind you something special!</p>
+    </div>
+
     <script>
         setTimeout(function() {
-            document.body.innerHTML = "<h1>Just kidding, Meghu! 😜</h1><p>I just wanted to remind you something special!</p>";
+            document.getElementById("hacked").classList.add("hidden");
+            document.getElementById("kidding").classList.remove("hidden");
+
             setTimeout(function() {
-                window.location.href = "https://www.tickcounter.com/countdown/6797353/just-this-days"; // Replace this with your actual link
-            }, 1000);
-        }, 1000);
+                window.location.href = "https://www.tickcounter.com/countdown/6797353/just-this-days"; // Change to your countdown link
+            }, 1000); // Redirect after 1 second
+        }, 1000); // "Just Kidding!" appears after 1 second
     </script>
 </body>
 </html>
