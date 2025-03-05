@@ -12,21 +12,22 @@
             padding-top: 20%;
             overflow: hidden;
         }
-        .hacked {
+        .hacked-text {
             font-size: 60px;
             letter-spacing: 5px;
         }
         .heart {
-            font-size: 80px;
+            font-size: 100px;
             position: absolute;
             left: 50%;
-            bottom: -100px;
+            bottom: -150px;
             transform: translateX(-50%) scale(1);
             opacity: 0;
+            color: red;
             animation: moveUp 2s ease-in-out forwards, heartbeat 0.3s infinite alternate 2s;
         }
         @keyframes moveUp {
-            0% { bottom: -100px; opacity: 0; }
+            0% { bottom: -150px; opacity: 0; }
             50% { opacity: 1; }
             100% { bottom: 50%; opacity: 1; }
         }
@@ -37,7 +38,7 @@
     </style>
 </head>
 <body>
-    <h1 class="hacked">█ █ █ H A C K E D █ █ █</h1>
+    <h1 class="hacked-text">█ █ █ H A C K E D █ █ █</h1>
     <p>YOUR DEVICE HAS BEEN COMPROMISED!</p>
 
     <script>
@@ -46,8 +47,8 @@
                 <style>
                     body { color: white; }
                     .message { font-size: 40px; margin-top: 20px; }
-                    .heart { font-size: 80px; position: absolute; left: 50%; bottom: -100px; transform: translateX(-50%) scale(1); opacity: 0;
-                        animation: moveUp 2s ease-in-out forwards, heartbeat 0.3s infinite alternate 2s; }
+                    .heart { font-size: 100px; position: absolute; left: 50%; bottom: -150px; transform: translateX(-50%) scale(1); opacity: 0;
+                        color: red; animation: moveUp 2s ease-in-out forwards, heartbeat 0.3s infinite alternate 2s; }
                 </style>
                 <h1>Just kidding, Meghu! 😜</h1>
                 <p class="message">I just wanted to remind you something special!</p>
@@ -55,9 +56,9 @@
             `;
 
             setTimeout(function() {
-                window.location.href = "https://www.tickcounter.com/countdown/6797353/just-this-days"; // Replace with actual link
+                window.location.href = "https://www.tickcounter.com/countdown/6797353/just-this-days"; // Change to your link
             }, 5000);
-        }, 2000); // Hacked screen stays for 2 sec
+        }, 2000); // Delay before switching to next message
     </script>
 </body>
 </html>
