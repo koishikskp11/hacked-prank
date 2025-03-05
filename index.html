@@ -33,10 +33,6 @@
             transform: translateX(-50%);
             text-align: center;
         }
-        .fight-text {
-            font-size: 40px;
-            color: white;
-        }
         .fight-button {
             font-size: 30px;
             padding: 10px 20px;
@@ -47,14 +43,20 @@
             cursor: pointer;
             margin-top: 20px;
         }
-        .arrow {
-            font-size: 50px;
-            color: yellow;
+        .blink-lines {
             position: absolute;
-            right: -60px;
+            width: 100px;
+            height: 5px;
+            background-color: yellow;
+            animation: blink 0.5s infinite alternate;
+        }
+        .left-line {
+            left: -120px;
             top: 50%;
-            transform: translateY(-50%) rotate(0deg);
-            animation: bounce 1s infinite alternate;
+        }
+        .right-line {
+            right: -120px;
+            top: 50%;
         }
         @keyframes beat {
             from { transform: translateX(-50%) scale(1); }
@@ -64,9 +66,9 @@
             from { top: 100%; }
             to { top: 50%; }
         }
-        @keyframes bounce {
-            from { transform: translateY(-50%) rotate(0deg); }
-            to { transform: translateY(-60%) rotate(10deg); }
+        @keyframes blink {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
@@ -89,7 +91,7 @@
                     document.getElementById("countdown2").innerText = count2;
                     if (count2 === 0) {
                         clearInterval(countdown2);
-                        document.body.innerHTML = "<h1>Oh no! It's Kathe! 🫏</h1><p>Time for a fun fight! 🥊</p><div class='fight-container'><p class='fight-text'>Let's fight!</p><button class='fight-button' onclick='startFight()'>LET'S FIGHT</button><div class='arrow'>➡️</div></div>";
+                        document.body.innerHTML = "<h1>Oh no! It's Kathe! 🫏</h1><p>Time for a fun fight! 🥊</p><div class='fight-container'><button class='fight-button' onclick='startFight()'>LET'S FIGHT</button><div class='blink-lines left-line'></div><div class='blink-lines right-line'></div></div>";
                         document.querySelector('.fight-container').style.display = 'block';
                     }
                 }, 1000);
