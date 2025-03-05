@@ -22,14 +22,17 @@
             left: 50%;
             top: 100%;
             transform: translateX(-50%);
-            animation: heartbeat 0.2s infinite alternate, moveUp 3s ease-in-out forwards;
+            opacity: 0;
+            animation: moveUp 3s ease-in-out forwards, heartbeat 0.3s infinite alternate 3s;
+        }
+        @keyframes moveUp {
+            0% { top: 100%; opacity: 0; }
+            50% { opacity: 1; }
+            100% { top: 50%; opacity: 1; }
         }
         @keyframes heartbeat {
             from { transform: translateX(-50%) scale(1); }
             to { transform: translateX(-50%) scale(1.4); }
-        }
-        @keyframes moveUp {
-            to { top: 50%; }
         }
     </style>
 </head>
@@ -40,6 +43,7 @@
     <script>
         setTimeout(function() {
             document.body.innerHTML = "<h1>Just kidding, Meghu! 😜</h1><p>I just wanted to remind you something special!</p><div class='heart'>❤️</div>";
+            document.querySelector('.heart').style.animation = "moveUp 3s ease-in-out forwards, heartbeat 0.3s infinite alternate 3s";
             setTimeout(function() {
                 window.location.href = "https://www.tickcounter.com/countdown/6797353/just-this-days"; // Replace this with your actual link
             }, 5000);
