@@ -11,6 +11,9 @@
             font-size: 40px;
             padding-top: 20%;
             animation: fadeIn 2s ease-in-out;
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
         }
         .countdown {
             font-size: 50px;
@@ -19,13 +22,13 @@
             animation: pulse 1s infinite alternate;
         }
         .hint {
-            font-size: 60px;
+            font-size: 10px; /* Further reduced font size */
             color: red;
-            opacity: 0;
-            animation: blink27 1s ease-in-out 2;
+            opacity: 0.05; /* Much lower opacity to make it barely visible */
+            animation: blink27 1s ease-in-out 2; /* Blink twice */
         }
         @keyframes blink27 {
-            0%, 100% { opacity: 0; }
+            0%, 100% { opacity: 0.05; }
             50% { opacity: 1; }
         }
         .slides {
@@ -68,6 +71,17 @@
     </style>
 </head>
 <body>
+    <!-- Background Music Player -->
+    <audio autoplay loop>
+        <source src="https://files.catbox.moe/e6j7p2.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Set volume using JavaScript -->
+    <script>
+        document.querySelector("audio").volume = 0.1;  // Set volume to 10% (you can change this value)
+    </script>
+
     <div id="slide1" class="slides active">
         <h1>█ █ █ H A C K E D █ █ █</h1>
         <p>YOUR DEVICE HAS BEEN COMPROMISED!</p>
@@ -75,11 +89,11 @@
         <div class="hint">27</div>
     </div>
     <div id="slide2" class="slides">
-        <h1>Do you recognize this m*sks?No u dont!!</h1>
+        <h1>Do you recognize this m*sks? No, you don't!!</h1>
         <p>🎭</p>
     </div>
     <div id="slide3" class="slides">
-        <h1>Weapon loaded  (ง ͠° ͟ʖ #)ง  </h1>
+        <h1>Weapon loaded  (ง ͠° ͟ʖ #)ง</h1>
         <p>🔫</p>
     </div>
     <div id="slide4" class="slides">
@@ -96,6 +110,7 @@
             <button class="fight-button" onclick="startFight()">LET'S FIGHT</button>
         </div>
     </div>
+
     <script>
         let slides = document.querySelectorAll('.slides');
         let currentSlide = 0;
